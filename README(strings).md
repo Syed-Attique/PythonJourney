@@ -65,6 +65,39 @@ print(text.startswith("I"))              # Output: True
 print(text.endswith("!"))                # Output: False
 ```
 
+## 5. String Slicing
+
+String slicing allows you to extract a portion of a string (a substring). The syntax is `string[start:stop:step]`.
+- **`start`**: Index where the slice begins (inclusive). Defaults to `0`.
+- **`stop`**: Index where the slice ends (exclusive). Defaults to the end of the string.
+- **`step`**: Determines the increment between each index. Defaults to `1`.
+
+```python
+phone = "6174951000"
+
+# Basic slicing: [start:stop]
+print(phone[0:3])   # Output: '617' (Characters from index 0 up to, but not including, 3)
+print(phone[6:10])  # Output: '1000' (Characters from index 6 up to 10)
+
+# Omitting start or stop index
+print(phone[:3])    # Output: '617' (Starts from the beginning to index 3)
+print(phone[6:])    # Output: '1000' (Starts from index 6 to the end)
+print(phone[:])     # Output: '6174951000' (Creates a full copy of the string)
+
+# Negative indexing (counting from the end)
+print(phone[-4:])   # Output: '1000' (Last 4 characters)
+print(phone[:-4])   # Output: '617495' (Everything EXCEPT the last 4 characters)
+print(phone[-7:-4]) # Output: '495' (From the 7th last to the 4th last)
+
+# Using the step parameter: [start:stop:step]
+print(phone[0:10:2]) # Output: '67910' (Every 2nd character)
+print(phone[::2])    # Output: '67910' (Every 2nd character from the whole string)
+print(phone[1::2])   # Output: '14500' (Every 2nd character starting from index 1)
+
+# Reversing a string
+print(phone[::-1])   # Output: '0001594716' (Reverses the entire string)
+```
+
 ---
 
 ## Example from `string_methods.py`

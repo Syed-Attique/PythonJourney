@@ -36,17 +36,23 @@ print(person.get("country", "Unknown"))  # Output: Unknown
 
 ## 3. Adding or Modifying Values
 
-You can add new key-value pairs or change existing ones by assigning a value to a key.
+You can add new key-value pairs or change existing ones by assigning a value to a key. 
+
+> [!NOTE]
+> You **cannot** use the `.append()` method on a dictionary. `.append()` is specifically for lists because lists just add a single item to the end of an ordered sequence. Dictionaries require both a **key** and a **value**, so you must use direct assignment (`person["job"] = "Developer"`) or the `.update()` method.
 
 ```python
 # Modifying an existing value
 person["age"] = 31
 
-# Adding a new key-value pair
+# Adding a new key-value pair using direct assignment
 person["job"] = "Developer"
 
+# Adding or updating multiple key-value pairs using .update()
+person.update({"hobby": "Photography", "age": 32})
+
 print(person)
-# Output: {'first_name': 'John', 'last_name': 'Doe', 'age': 31, 'city': 'New York', 'job': 'Developer'}
+# Output: {'first_name': 'John', 'last_name': 'Doe', 'age': 32, 'city': 'New York', 'job': 'Developer', 'hobby': 'Photography'}
 ```
 
 ## 4. Removing Key-Value Pairs
